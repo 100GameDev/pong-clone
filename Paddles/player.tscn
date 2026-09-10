@@ -5,6 +5,6 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bhunq"]
 
 [node name="Player" type="Sprite2D" unique_id=2135774340]
-scale = Vector2(50, 200)
+scale = Vector2(50, 150)
 texture = SubResource("PlaceholderTexture2D_bhunq")
 script = ExtResource("1_6f7qg")

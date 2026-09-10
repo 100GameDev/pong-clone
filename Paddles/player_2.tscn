@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://hh3p3aa1qhas"]
+
+[ext_resource type="Script" uid="uid://ns17ebbjvutu" path="res://Paddles/player_2.gd" id="1_8tcd2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bhunq"]
+
+[node name="Player2" type="Sprite2D" unique_id=1467002425]
+scale = Vector2(50, 150)
+texture = SubResource("PlaceholderTexture2D_bhunq")
+script = ExtResource("1_8tcd2")
