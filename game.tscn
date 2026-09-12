@@ -1,12 +1,98 @@
-[gd_scene format=3 uid="uid://cn53y1f2mwxbm"]
+[gd_scene format=4 uid="uid://cn53y1f2mwxbm"]
 
 [ext_resource type="PackedScene" uid="uid://bhtx1tstykj50" path="res://Paddles/player.tscn" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://b1nwrnw8tdic7" path="res://game.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://hh3p3aa1qhas" path="res://Paddles/player_2.tscn" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://cl7tsjbbfyade" path="res://textures/tileset.png" id="4_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://dkkec62w7d243" path="res://textures/tennistable.png" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://bb624d2vtp2fl" path="res://ball.tscn" id="6_ryrav"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jktm"]
+texture = ExtResource("4_fc0e3")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_kttp1"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 6
+sources/0 = SubResource("TileSetAtlasSource_7jktm")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(21, 640)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ryrav"]
+font_size = 32
+font_color = Color(1, 1, 1, 0.09803922)
+outline_size = 6
+outline_color = Color(0, 0, 0, 0.09803922)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.09803922)
 
 [node name="Game" type="Node2D" unique_id=1963817788]
+script = ExtResource("1_feb5d")
 
 [node name="Player" parent="." unique_id=2135774340 instance=ExtResource("1_e2o6t")]
-position = Vector2(1100, 300)
+unique_name_in_owner = true
+position = Vector2(1070, 300)
 
-[node name="Player2" parent="." unique_id=1467002425 instance=ExtResource("2_feb5d")]
-position = Vector2(50, 300)
+[node name="Player2" parent="." unique_id=433296386 instance=ExtResource("2_feb5d")]
+unique_name_in_owner = true
+position = Vector2(80, 300)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=965759054]
+position = Vector2(576, 319.98)
+zoom = Vector2(1.7, 1.7)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1337645896]
+tile_map_data = PackedByteArray("AAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAABAAAAAAAFAP//AAABAAAAAAAGAP//AAABAAAAAAAHAP//AAABAAAAAAAIAP//AAABAAAAAAAJAP//AAABAAAAAAAKAP//AAABAAAAAAALAP//AAABAAAAAAAMAP//AAABAAAAAAANAP//AAABAAAAAAAOAP//AAABAAAAAAAPAP//AAABAAAAAAAQAP//AAABAAAAAAARAP//AAABAAAAAAASAP//AAABAAAAAAATAP//AAABAAAAAAAUAP//AAABAAAAAAAVAP//AAABAAAAAAAWAP//AAABAAAAAAAXAP//AAABAAAAAAAYAP//AAABAAAAAAAZAP//AAABAAAAAAAaAP//AAABAAAAAAAbAP//AAABAAAAAAAcAP//AAABAAAAAAAdAP//AAABAAAAAAAeAP//AAABAAAAAAAfAP//AAABAAAAAAAgAP//AAABAAAAAAAhAP//AAABAAAAAAAiAP//AAABAAAAAAAjAP//AAABAAAAAAAkAP//AAABAAAAAAAlAP//AAABAAAAAAAmAP//AAABAAAAAAAnAP//AAABAAAAAAAoAP//AAABAAAAAAApAP//AAABAAAAAAAqAP//AAABAAAAAAArAP//AAABAAAAAAAsAP//AAABAAAAAAAtAP//AAABAAAAAAAuAP//AAABAAAAAAAvAP//AAABAAAAAAAwAP//AAABAAAAAAAxAP//AAABAAAAAAAyAP//AAABAAAAAAAzAP//AAABAAAAAAA0AP//AAABAAAAAAA1AP//AAABAAAAAAA2AP//AAABAAAAAAA3AP//AAABAAAAAAA4AP//AAABAAAAAAA5AP//AAABAAAAAAA6AP//AAABAAAAAAA7AP//AAABAAAAAAA8AP//AAABAAAAAAA9AP//AAABAAAAAAA+AP//AAABAAAAAAA/AP//AAABAAAAAABAAP//AAABAAAAAABBAP//AAABAAAAAABCAP//AAABAAAAAABDAP//AAABAAAAAABEAP//AAABAAAAAABFAP//AAABAAAAAABGAP//AAABAAAAAAABACgAAAABAAAAAAACACgAAAABAAAAAAADACgAAAABAAAAAAAEACgAAAABAAAAAAAFACgAAAABAAAAAAAGACgAAAABAAAAAAAHACgAAAABAAAAAAAIACgAAAABAAAAAAAJACgAAAABAAAAAAAKACgAAAABAAAAAAALACgAAAABAAAAAAAMACgAAAABAAAAAAANACgAAAABAAAAAAAOACgAAAABAAAAAAAPACgAAAABAAAAAAAQACgAAAABAAAAAAARACgAAAABAAAAAAASACgAAAABAAAAAAATACgAAAABAAAAAAAUACgAAAABAAAAAAAVACgAAAABAAAAAAAWACgAAAABAAAAAAAXACgAAAABAAAAAAAYACgAAAABAAAAAAAZACgAAAABAAAAAAAaACgAAAABAAAAAAAbACgAAAABAAAAAAAcACgAAAABAAAAAAAdACgAAAABAAAAAAAeACgAAAABAAAAAAAfACgAAAABAAAAAAAgACgAAAABAAAAAAAhACgAAAABAAAAAAAiACgAAAABAAAAAAAjACgAAAABAAAAAAAkACgAAAABAAAAAAAlACgAAAABAAAAAAAmACgAAAABAAAAAAAnACgAAAABAAAAAAAoACgAAAABAAAAAAApACgAAAABAAAAAAAqACgAAAABAAAAAAArACgAAAABAAAAAAAsACgAAAABAAAAAAAtACgAAAABAAAAAAAuACgAAAABAAAAAAAvACgAAAABAAAAAAAwACgAAAABAAAAAAAxACgAAAABAAAAAAAyACgAAAABAAAAAAAzACgAAAABAAAAAAA0ACgAAAABAAAAAAA1ACgAAAABAAAAAAA2ACgAAAABAAAAAAA3ACgAAAABAAAAAAA4ACgAAAABAAAAAAA5ACgAAAABAAAAAAA6ACgAAAABAAAAAAA7ACgAAAABAAAAAAA8ACgAAAABAAAAAAA9ACgAAAABAAAAAAA+ACgAAAABAAAAAAA/ACgAAAABAAAAAABAACgAAAABAAAAAABBACgAAAABAAAAAABCACgAAAABAAAAAABDACgAAAABAAAAAABEACgAAAABAAAAAABFACgAAAABAAAAAABGACgAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_kttp1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=435685200]
+z_index = -1
+position = Vector2(576, 320)
+scale = Vector2(8.828125, 9.999999)
+texture = ExtResource("5_7jktm")
+
+[node name="ball" parent="." unique_id=108945341 instance=ExtResource("6_ryrav")]
+unique_name_in_owner = true
+position = Vector2(585, 295)
+
+[node name="goalp1" type="Area2D" parent="." unique_id=2021636124]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goalp1" unique_id=1234943067]
+position = Vector2(9, 320)
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="goalp2" type="Area2D" parent="." unique_id=1063944346]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goalp2" unique_id=216051386]
+position = Vector2(1143, 320)
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="Score" type="Label" parent="." unique_id=1767874787]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 490.0
+offset_top = 6.0
+offset_right = 680.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "SCORE: 0 x 0"
+label_settings = SubResource("LabelSettings_ryrav")
+
+[connection signal="goalp1" from="ball" to="." method="_on_ball_goalp_1"]
+[connection signal="goalp2" from="ball" to="." method="_on_ball_goalp_2"]
+[connection signal="body_entered" from="goalp1" to="ball" method="_on_goalp_1_body_entered"]
+[connection signal="body_entered" from="goalp2" to="ball" method="_on_goalp_2_body_entered"]
