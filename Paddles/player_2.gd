@@ -1,9 +1,17 @@
 extends CharacterBody2D
 
-var max_speed: int = 500
+var max_speed: float = 600.0
+@onready var ball: CharacterBody2D = %ball
+@export var deadzone := 10.0 # Positioning difference between the ball to the paddle
 
 func _process(_delta: float) -> void:
-	var direction := Vector2(0, 0)
-	direction.y = Input.get_axis("move_up_p2", "move_down_p2")
-	velocity = direction * max_speed
+	var target_y_difference = ball.global_position.y - global_position.y
+	
+	if abs(target_y_difference) > deadzone:
+		if target_y_difference > 0:
+			velocity.y = max_speed
+		else:
+			velocity.y = -max_speed
+	else:
+		velocity.y = 0
 	move_and_slide()

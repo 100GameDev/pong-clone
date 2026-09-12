@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var max_speed: float = 500.0
+var max_speed: float = 600.0
 
 func _process(_delta: float) -> void:
 	var direction := Vector2(0, 0)
