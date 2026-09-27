@@ -13,7 +13,22 @@ script = ExtResource("1_4mxmf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=748836727]
 shape = SubResource("RectangleShape2D_8tcd2")
 
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1505013553]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -75.0
+offset_right = 25.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(2.4546682e-06, 0.7616301, 0.28312838, 1)
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1023989641]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -27,6 +42,7 @@ grow_vertical = 2
 color = Color(0.7607843, 0.46666667, 0.29411766, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1785985725]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

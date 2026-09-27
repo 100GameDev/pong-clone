@@ -5,6 +5,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(50, 150)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bhunq"]
+
 [node name="Player" type="CharacterBody2D" unique_id=119187217]
 collision_layer = 2
 collision_mask = 5
@@ -12,6 +14,11 @@ script = ExtResource("1_lwvdc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=692385383]
 shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=840284723]
+visible = false
+scale = Vector2(50, 152)
+texture = SubResource("PlaceholderTexture2D_bhunq")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=624732376]
 anchors_preset = 8
